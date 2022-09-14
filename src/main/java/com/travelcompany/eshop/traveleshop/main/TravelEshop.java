@@ -4,40 +4,31 @@
  */
 
 package com.travelcompany.eshop.traveleshop.main;
-
-import com.travelcompany.eshop.traveleshop.CustomerBook;
-import com.travelcompany.eshop.traveleshop.Customers;
-import com.travelcompany.eshop.traveleshop.Itineraries;
-import com.travelcompany.eshop.traveleshop.OrderedTickets;
-import java.io.File;
+import com.travelcompany.eshop.traveleshop.CustomerRepositoryImpl;
+import com.travelcompany.eshop.traveleshop.domain.Customers;
+import com.travelcompany.eshop.traveleshop.domain.Itineraries;
+import com.travelcompany.eshop.traveleshop.domain.OrderedTickets;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 /**
  *
  * @author Terry
  */
 public class TravelEshop {
-//public OrderedTickets(long id, Customers customer, Itineraries itinerary, 
-//            String PaymentMethod, BigDecimal PaymentAmount) {
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+
+    public static void main(String[] args) {
         Customers customer = new Customers(); 
         Itineraries itinerary = new Itineraries();
         OrderedTickets ticket = new OrderedTickets();
-        CustomerBook customerBook = new CustomerBook();
+        CustomerRepositoryImpl customerBook = new CustomerRepositoryImpl();
 //        System.out.println(ticket.header());
 //        System.out.println(ticket.toCsv());
 //        
 //        System.out.println(customerBook.getCustomers());
 //        System.out.println(customerBook.toString());
-        customerBook.printAllCustomers();
-        customerBook.getCategory();
-             
-       
+      
        
           
         
