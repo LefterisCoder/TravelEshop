@@ -4,45 +4,29 @@
  */
 
 package com.travelcompany.eshop.traveleshop.main;
+import Services.TravelServices;
 import com.travelcompany.eshop.traveleshop.CustomerRepositoryImpl;
+import com.travelcompany.eshop.traveleshop.Servicesimpl.TravelServicesImpl;
 import com.travelcompany.eshop.traveleshop.domain.Customers;
 import com.travelcompany.eshop.traveleshop.domain.Itineraries;
-import com.travelcompany.eshop.traveleshop.domain.OrderedTickets;
-import java.io.FileNotFoundException;
+
+
 
 /**
  *
  * @author Terry
  */
 public class TravelEshop {
-
-
-
-    public static void main(String[] args) {
+public static void main(String[] args) {
         Customers customer = new Customers(); 
         Itineraries itinerary = new Itineraries();
-        OrderedTickets ticket = new OrderedTickets();
-        CustomerRepositoryImpl customerBook = new CustomerRepositoryImpl();
-//        System.out.println(ticket.header());
-//        System.out.println(ticket.toCsv());
-//        
-//        System.out.println(customerBook.getCustomers());
-//        System.out.println(customerBook.toString());
-      
        
-          
-        
-       
-        
-//        if(customer.getCategory().equals(Category.BUSINESS)){
-//            System.out.println("true dat");
-//        }
-//       
-//        
-//        String myOrderedTicketsAsSting = ticket.toCsv();
-//        String [] words = myOrderedTicketsAsSting.split(",");
-//        for( String Customers : words){
-                   
+//        CustomerRepositoryImpl customerBook = new CustomerRepositoryImpl();
+//        System.out.println(customerBook.readCustomer());
+        TravelServices travelServices = new TravelServicesImpl();
+        travelServices.loadCustomerData();
+        travelServices.loadItineraryData();
+        travelServices.displayOrders(1);
         
     }
 }

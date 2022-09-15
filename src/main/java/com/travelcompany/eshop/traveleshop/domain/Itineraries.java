@@ -5,7 +5,7 @@
 package com.travelcompany.eshop.traveleshop.domain;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+
 
 /**
  *
@@ -19,11 +19,11 @@ public class Itineraries {
     private Category airLine;
     private BigDecimal BasicPrice;
 
-    public Itineraries(long id, Category departureCode, String date, String destinationCode, Category airLine, BigDecimal BasicPrice) {
+    public Itineraries(long id, Category departureCode, String destinationCode, String date, Category airLine, BigDecimal BasicPrice) {
         this.id = id;
         this.departureCode = departureCode;
-        this.date = date;
         this.destinationCode = destinationCode;
+        this.date = date;
         this.airLine = airLine;
         this.BasicPrice = BasicPrice;
     }
@@ -85,13 +85,13 @@ public class Itineraries {
 
     @Override
     public String toString() {
-        return "Itineraries{" + "id=" + id + ", departureCode=" + departureCode + 
-                ", date=" + date + ", destinationCode=" 
-                + destinationCode + ", airLine=" + airLine 
+        return "Itineraries{" + "id=" + id + ", departureCode=" + departureCode + ", destinationCode=" + destinationCode
+                + ", date=" + date  
+                + ", airLine=" + airLine 
                 + ", BasicPrice=" + BasicPrice + '}';
     }
 
-    
+   
 
    
     }
