@@ -4,15 +4,29 @@
  */
 package com.travelcompany.eshop.traveleshop.domain;
 
+import CustomerException.CustomerException;
+import com.travelcompany.eshop.traveleshop.utility.GeneralUtility;
+
 /**
  *
  * @author Terry
  */
 public class Customers {
-    private long id;
-    private String FullName,Email,Adress,Nationality;
-    private Category category;
+  private long id;
+    private String FullName,Email,Adress,Nationality,Category;
     
+    public Customers(long id, String FullName, String Email, String Adress, 
+            String Nationality,String Category) throws CustomerException {
+        if(!GeneralUtility.isValidEmail(Email))
+            throw new CustomerException("Invalid email");
+        this.id = id;
+        this.FullName = FullName;
+        this.Email = Email;
+        this.Adress = Adress;
+        this.Nationality = Nationality;
+        this.Category = Category;
+    }
+
 
     public Customers() {
     }
@@ -29,22 +43,20 @@ public class Customers {
         return FullName;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-  
-
     public void setFullName(String FullName) {
         this.FullName = FullName;
     }
 
     public String getEmail() {
         return Email;
+    }
+
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String Category) {
+        this.Category = Category;
     }
 
     public void setEmail(String Email) {
@@ -67,34 +79,11 @@ public class Customers {
         this.Nationality = Nationality;
     }
 
-    public Customers(long id, String FullName, String Email, String Adress, 
-            String Nationality, Category category) {
-        this.id = id;
-        this.FullName = FullName;
-        this.Email = Email;
-        this.Adress = Adress;
-        this.Nationality = Nationality;
-        this.category = category;
-    }
-
+   
     @Override
     public String toString() {
         return "Customers{" + "id=" + id + ", FullName=" + FullName + ", Email=" 
                 + Email + ", Adress=" + Adress + 
-                ", Nationality=" + Nationality + ", category=" + category + '}';
-    }
-
-  
-
-  
-    
-   public String header(){
-       return  "id, FullName,Email,Adress,Nationality" ;
-            
-   }
-    public String toCsv(){
-        return  id + "," + FullName 
-                + "," + Email + "," + Adress 
-                + "," + Nationality;
+                ", Nationality=" + Nationality + '}';
     }
 }

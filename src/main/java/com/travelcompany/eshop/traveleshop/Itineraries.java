@@ -13,13 +13,13 @@ import java.math.BigDecimal;
  */
 public class Itineraries {
     private long id;
-    private Category departureCode;
+    private String departureCode;
     private String date;
     private String destinationCode;
-    private Category airLine;
+    private String airLine;
     private BigDecimal BasicPrice;
 
-    public Itineraries(long id, Category departureCode, String destinationCode, String date, Category airLine, BigDecimal BasicPrice) {
+    public Itineraries(long id, String departureCode, String destinationCode, String date, String airLine, BigDecimal BasicPrice) {
         this.id = id;
         this.departureCode = departureCode;
         this.destinationCode = destinationCode;
@@ -41,11 +41,11 @@ public class Itineraries {
         this.id = id;
     }
 
-    public Category getDepartureCode() {
+    public String getDepartureCode() {
         return departureCode;
     }
 
-    public void setDepartureCode(Category departureCode) {
+    public void setDepartureCode(String departureCode) {
         this.departureCode = departureCode;
     }
 
@@ -67,11 +67,11 @@ public class Itineraries {
 
     
 
-    public Category getAirLine() {
+    public String getAirLine() {
         return airLine;
     }
 
-    public void setAirLine(Category airLine) {
+    public void setAirLine(String airLine) {
         this.airLine = airLine;
     }
 

@@ -6,6 +6,7 @@ package com.travelcompany.eshop.traveleshop;
 
 import com.travelcompany.eshop.traveleshop.domain.Customers;
 import com.travelcompany.eshop.traveleshop.repository.CustomerRepository;
+import com.travelcompany.eshop.traveleshop.utility.GeneralUtility;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,13 +25,17 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public boolean addCustomer(Customers customer) {
-        for (int index = 0; index < customers.size(); index++) {
-            if (customers.get(index).getId() == customer.getId()) {
+          for (int index = 0; index < customers.size(); index++){
+            if (customers.get(index).getId()== customer.getId() )
                 return false;
-            }
         }
+        
+        if (! GeneralUtility.isValidcustomer(customer)) 
+           return false;
+        customers.add(customer);
         return true;
     }
+    
 
     @Override
     public List<Customers> readCustomer() {

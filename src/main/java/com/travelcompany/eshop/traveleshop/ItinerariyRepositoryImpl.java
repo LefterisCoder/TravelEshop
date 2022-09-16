@@ -5,6 +5,7 @@
 package com.travelcompany.eshop.traveleshop;
 
 
+
 import com.travelcompany.eshop.traveleshop.domain.Itineraries;
 import com.travelcompany.eshop.traveleshop.repository.IteneraryRepository;
 import java.math.BigDecimal;
@@ -19,9 +20,7 @@ import java.util.List;
 public class ItinerariyRepositoryImpl implements IteneraryRepository{
     private final ArrayList<Itineraries> itineraries;
     
-    public ItinerariyRepositoryImpl()
-
-    {
+    public ItinerariyRepositoryImpl(){
         itineraries = new ArrayList<>();{
         
      
@@ -35,13 +34,7 @@ public class ItinerariyRepositoryImpl implements IteneraryRepository{
 
     @Override
     public boolean addItinerary(Itineraries itinerary) {
-        for (int index = 0; index < itineraries.size(); index++){
-            if (itineraries.get(index).getId()== itinerary.getId() )
-                return false;
-        }
-        itineraries.add(itinerary);
         return true;
-        
     }
 
     @Override
@@ -68,9 +61,8 @@ public class ItinerariyRepositoryImpl implements IteneraryRepository{
          itineraries.setBasicPrice(newPrice);
         return true;
     }
-
-   
 }
+
 
 
 

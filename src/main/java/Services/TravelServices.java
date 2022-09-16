@@ -5,14 +5,28 @@
 package Services;
 
 import com.travelcompany.eshop.traveleshop.domain.Order;
+import com.travelcompany.eshop.traveleshop.domain.OrderTickets;
 
 /**
  *
  * @author Terry
  */
-public interface  TravelServices {
+public interface TravelServices {
+
     void loadCustomerData();
+
     void loadItineraryData();
-    Order createOrder(long customerID, long[] itemIds);
-    void displayOrders(long customerId);
+
+    Order createOrder(long itineraryId, long customerID, long[] itineraryIds);
+
+    String displayOrders(long customerId);
+
+    String displayOrder(long itineraryId);
+
+    String displayItineraries();
+
+    String displayCustomers();
+
+    void getOrders();
+
 }

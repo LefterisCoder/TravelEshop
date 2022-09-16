@@ -16,29 +16,30 @@ public class GeneralUtility {
     
    
     public static String[] customers = {
-        "1, Maria Ioannidou,miordanou@mail.com,Athens,Greek,INDIVIDUAL",
-        "2, Dimitriou Dimitrios,ddimitriou@mail.com, Athens,Greek,INDIVIDUAL",
-        "3, Ioannis Ioannou,iioannou@mail.com, Athens,Greek,BUSINESS",
-        "4, Antonio Molinari,amolinari@mail.com, Milan,Italian,INDIVIDUAL",
-        "5, Frederico Rosii,frossi@mail.com, Milan,Italian,INDIVIDUAL",
-        "6, Mario Conti,mconti@mail.com, Rome,Italian,BUSINESS",
-        "7, Nathan Martin,nmartin@mail.com, Lyon,French,BUSINESS",
-        "8, Enzo Collin,ecollin@mail.com, Lyon,French,INDIVIDUAL",
-        "9, Frederic Michel,fmichel@mail.com,Athens,French,INDIVIDUAL"
+        "1,Maria Ioannidou,miordanou@mail.com,Athens,Greek,INDIVIDUAL",
+        "2,Dimitriou Dimitrios,ddimitriou@mail.com,Athens,Greek,INDIVIDUAL",
+        "3,Ioannis Ioannou,iioannou@mail.com,Athens,Greek,BUSINESS",
+       "4,Antonio Molinari,amolinari@mail.com,Milan,Italian,INDIVIDUAL",
+        "5,Frederico Rosii,frossi@mail.com,Milan,Italian,INDIVIDUAL",
+        "6,Mario Conti,mconti@mail.com,Rome,Italian,BUSINESS",
+        "7,Nathan Martin,nmartin@mail.com,Lyon,French,BUSINESS",
+        "8,Enzo Collin,ecollin@mail.com,Lyon,French,INDIVIDUAL",
+        "9,Frederic Michel,fmichel@mail.com,Athens,French,INDIVIDUAL"
+
         
       };
 
 public static String[] itineraries = {
     
-    "1,DEPARTURECODE,PAR,22/02/2022 13:35,AIRLINE,300",
-    "2,DEPARTURECODE,LON,22/02/2022 13:40,AIRLINE,420",
-    "3,DEPARTURECODE,AMS,22/02/2022 13:45,AIRLINE,280",
-    "4,DEPARTURECODE,PAR,22/02/2022 14:20,AIRLINE,310",
-    "5,DEPARTURECODE,DUB,22/02/2022 14:35,AIRLINE,880",
-    "6,DEPARTURECODE,FRA,22/02/2022 14:55,AIRLINE,380",
-    "7,DEPARTURECODE,FRA,22/02/2022 15:35,AIRLINE,350",
-    "8,DEPARTURECODE,MEX,22/02/2022 16:00,AIRLINE,1020",
-    "9,DEPARTURECODE,DUB,22/02/2022 16:35,AIRLINE,770",
+    "1,DEPARTURECODE,PAR,22/02/202213:35,Skylines,300",
+    "2,DEPARTURECODE,LON,22/02/202213:40,Skylines,420",
+    "3,DEPARTURECODE,AMS,22/02/202213:45,Skylines,280",
+    "4,DEPARTURECODE,PAR,22/02/202214:20,Skylines,310",
+    "5,DEPARTURECODE,DUB,22/02/202214:35,Skylines,880",
+    "6,DEPARTURECODE,FRA,22/02/202214:55,Skylines,380",
+    "7,DEPARTURECODE,FRA,22/02/202215:35,Skylines,350",
+    "8,DEPARTURECODE,MEX,22/02/202216:00,Skylines,1020",
+    "9,DEPARTURECODE,DUB,22/02/202216:35,Skylines,770",
     
     };
 
@@ -52,14 +53,13 @@ public static String[] itineraries = {
        public static boolean isValidcustomer(Customers customer){
         if (customer == null) return false;    
         
-  //      if ("administrator".equals(customer.getFirstName())) return false;
+ 
         if (customer.getFullName()!=null && customer.getFullName().toLowerCase().equals("administrator")) return false;
         if (! isValidEmail(customer.getEmail())) return false;
         if (customer.getEmail().contains("@gmail.com")) return false;
         
         return true;
-      }
-
+       }
     public static void parseOrder(String myOrderAsSting) {
         String[] words = myOrderAsSting.split(",");
         System.out.println("The details of the order are:");
@@ -70,4 +70,14 @@ public static String[] itineraries = {
       
 
 }
-
+//
+//        "1,Maria Ioannidou,miordanou@mail.com,Athens,Greek,INDIVIDUAL",
+//        "2,Dimitriou Dimitrios,ddimitriou@mail.com,Athens,Greek,INDIVIDUAL",
+//        "3,Ioannis Ioannou,iioannou@mail.com,Athens,Greek,BUSINESS",
+//        "4,Antonio Molinari,amolinari@mail.com,Milan,Italian,INDIVIDUAL",
+//        "5,Frederico Rosii,frossi@mail.com,Milan,Italian,INDIVIDUAL",
+//        "6,Mario Conti,mconti@mail.com,Rome,Italian,BUSINESS",
+//        "7,Nathan Martin,nmartin@mail.com,Lyon,French,BUSINESS",
+//        "8,Enzo Collin,ecollin@mail.com,Lyon,French,INDIVIDUAL",
+//        "9,Frederic Michel,fmichel@mail.com,Athens,French,INDIVIDUAL"
+//        

@@ -5,8 +5,7 @@
 package com.travelcompany.eshop.traveleshop.repository;
 
 
-
-import com.travelcompany.eshop.traveleshop.domain.Itineraries;
+import com.travelcompany.eshop.traveleshop.domain.Order;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -14,12 +13,11 @@ import java.util.List;
  *
  * @author Terry
  */
-public interface  IteneraryRepository {
-     boolean addItinerary (Itineraries itinerary);
-    List<Itineraries> readItinerary();
-    Itineraries readItinerary(long itineraryId);
-    boolean updateItinerary(long itineraryId,BigDecimal newPrice);
-    
-    
+public interface OrderRepository {
+     boolean addOrder(Order order);
+    List<Order> readOrder();
+    Order readOrder(long orderId);
+    boolean updateOrder(long orderId, BigDecimal newPrice);
+    List<Order> getOrder();
     
 }

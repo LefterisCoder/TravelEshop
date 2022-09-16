@@ -4,6 +4,8 @@
  */
 package com.travelcompany.eshop.traveleshop.domain;
 
+
+
 import java.math.BigDecimal;
 
 /**
@@ -11,12 +13,10 @@ import java.math.BigDecimal;
  * @author Terry
  */
 public class OrderTickets {
-        
-        private Itineraries itinerary;
-        private int quantity;
-        private BigDecimal itineraryPrice;
-        private BigDecimal discount;
-        private Order order;
+    private Itineraries itinerary;
+    private int quantity;
+    private BigDecimal itineraryPrice;
+    private Order order;
 
     public OrderTickets() {
     }
@@ -25,7 +25,6 @@ public class OrderTickets {
         this.itinerary = itinerary;
         this.quantity = quantity;
         this.itineraryPrice = itineraryPrice;
-        this.discount = discount;
         this.order = order;
     }
 
@@ -53,14 +52,6 @@ public class OrderTickets {
         this.itineraryPrice = itineraryPrice;
     }
 
-    public BigDecimal getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
-    }
-
     public Order getOrder() {
         return order;
     }
@@ -69,14 +60,20 @@ public class OrderTickets {
         this.order = order;
     }
 
+    public BigDecimal TotalCost() {
+        return itineraryPrice.multiply(BigDecimal.valueOf(quantity));
+    }
+    
     @Override
     public String toString() {
         return "OrderTickets{" + "itinerary=" + itinerary + ", quantity=" 
                + quantity + 
                 ", itineraryPrice=" + itineraryPrice + 
-                ", discount=" + discount + ", order=" + order + '}';
+                 ", order=" + order + '}';
     }
         
         
     
 }
+    
+
